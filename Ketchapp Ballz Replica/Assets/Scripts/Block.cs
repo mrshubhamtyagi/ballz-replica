@@ -36,7 +36,7 @@ public class Block : MonoBehaviour
     {
         textMeshPro.text = hitsRemaining.ToString();
         int randomNumber = UnityEngine.Random.Range(0, 5);
-        spriteRenderer.color = Color.Lerp(colors[randomNumber], Color.white, hitsRemaining / 10f);
+        spriteRenderer.color = Color.Lerp(Color.white,colors[randomNumber], hitsRemaining / 10f);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

@@ -19,7 +19,7 @@ public class BallLauncher : MonoBehaviour
 
     private LaunchPreview launchPreview;
 
-    private List<Ball> balls = new List<Ball>();
+    private List<Ball> ballList = new List<Ball>();
     private int ballsReady;
 
     private BlockSpawner blockSpawner;
@@ -37,7 +37,7 @@ public class BallLauncher : MonoBehaviour
     {
         Ball ball = Instantiate(ballPrefab);
         ball.gameObject.SetActive(false);
-        balls.Add(ball);
+        ballList.Add(ball);
         ballsReady++;
         ballsCount.text = ballsReady.ToString();
     }
@@ -68,7 +68,7 @@ public class BallLauncher : MonoBehaviour
 
         if (Mathf.Abs(_direction.x) > 0.1f || Mathf.Abs(_direction.y) > 0.1f)
         {
-            foreach (var ball in balls)
+            foreach (var ball in ballList)
             {
                 if (ball != null)
                 {
@@ -98,6 +98,10 @@ public class BallLauncher : MonoBehaviour
         endDragPosition = _worldPosition;
 
         Vector3 _direction = endDragPosition - startDragPosition;
+        //_direction = transform.position - _direction;
+        //Vector3 finalDir = new Vector3(_direction.x,
+        //Mathf.Clamp(_direction.y, transform.position.y - 0.5f, transform.position.y + 2),
+        //_direction.z);
         launchPreview.SetEndPoint(transform.position - _direction);
     }
 
@@ -111,12 +115,17 @@ public class BallLauncher : MonoBehaviour
     internal void ReturnBall()
     {
         ballsReady++;
-        if (ballsReady == balls.Count)
+        if (ballsReady == ballList.Count)
         {
             print("ReturnBall");
             blockSpawner.SpawnRowOfBlocks();
             CreateBall();
             readyToLaunch = true;
         }
+    }
+
+    private void OnDisable()
+    {
+        ballList.Clear();
     }
 }

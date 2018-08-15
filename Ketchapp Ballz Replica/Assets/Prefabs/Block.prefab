@@ -56,7 +56,7 @@ Transform:
   m_GameObject: {fileID: 1174953178901750}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2, y: 5, z: 0}
-  m_LocalScale: {x: 6, y: 6, z: 6}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 224212703547939802}
   m_Father: {fileID: 0}
@@ -118,16 +118,16 @@ BoxCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
-    border: {x: 0.049999997, y: 0.049999997, z: 0.049999997, w: 0.049999997}
+    border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.16, y: 0.16}
-    newSize: {x: 0.16, y: 0.16}
+    oldSize: {x: 0.7692308, y: 0.7692308}
+    newSize: {x: 0.7692308, y: 0.7692308}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.14, y: 0.14}
+  m_Size: {x: 0.8, y: 0.8}
   m_EdgeRadius: 0
 --- !u!114 &114925368120244562
 MonoBehaviour:
@@ -188,8 +188,8 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 5
-  m_fontSizeBase: 5
+  m_fontSize: 30
+  m_fontSizeBase: 30
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -226,7 +226,7 @@ MonoBehaviour:
   m_firstVisibleCharacter: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 1.4031923, y: 0.61481094, z: 2.7835426, w: 3.575087}
+  m_margin: {x: -0.4594867, y: -1.3018398, z: 0.99847317, w: 1.6607995}
   m_textInfo:
     textComponent: {fileID: 0}
     characterCount: 1
@@ -290,12 +290,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 54496839bc2964f0d9c6e82a8ee74486, type: 3}
+  m_Color: {r: 0.9019608, g: 0.9019608, b: 0.9019608, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.16, y: 0.16}
+  m_Size: {x: 0.7692308, y: 0.7692308}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1

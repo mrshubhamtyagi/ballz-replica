@@ -12,7 +12,7 @@ public class BlockSpawner : MonoBehaviour
     private float distanceBtwBlocks = 1f;
     private int rowsSpawned;
 
-    private List<Block> blockSpawned = new List<Block>();
+    private List<Block> blockList = new List<Block>();
 
     private void OnEnable()
     {
@@ -24,7 +24,7 @@ public class BlockSpawner : MonoBehaviour
 
     public void SpawnRowOfBlocks()
     {
-        foreach (var block in blockSpawned)
+        foreach (var block in blockList)
         {
             if (block != null)
             {
@@ -39,7 +39,7 @@ public class BlockSpawner : MonoBehaviour
                 Block block = Instantiate(blockPrefab, GetPosition(i), Quaternion.identity);
                 int hits = UnityEngine.Random.Range(1, 3) + rowsSpawned;
                 block.SetHits(hits);
-                blockSpawned.Add(block);
+                blockList.Add(block);
             }
         }
         rowsSpawned++;
@@ -50,5 +50,10 @@ public class BlockSpawner : MonoBehaviour
         Vector3 position = transform.position;
         position += Vector3.right * i * distanceBtwBlocks;
         return position;
+    }
+
+    private void OnDisable()
+    {
+        blockList.Clear();
     }
 }
